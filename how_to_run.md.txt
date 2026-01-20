@@ -1,0 +1,48 @@
+## Using Docker (Easiest):
+```bash
+bashcd izone-workforce-api
+cp .env.example .env
+docker-compose up -d
+docker-compose exec api alembic upgrade head
+docker-compose exec api python seed_data.py
+```
+Access at http://localhost:8000/docs
+
+Using Python:
+bashpython -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+
+# Configure DATABASE_URL in .env
+alembic upgrade head
+python seed_data.py
+python run.py
+
+🔑 Test Credentials (After Seeding)
+
+Admin: admin@izone.com / admin123
+Manager: manager@izone.com / manager123
+Employee: employee1@izone.com / employee123
+
+📚 Key Files to Check
+
+PROJECT_SUMMARY.md - Complete overview
+README.md - Full documentation
+app/main.py - Application entry point
+app/api/v1/ - All API endpoints
+.env.example - Configuration template
+
+🎯 All Requirements Met
+✅ FastAPI framework
+✅ PostgreSQL database with complete schema
+✅ Attendance management (clock in/out, tracking)
+✅ Leave application system (apply, approve, balance)
+✅ Employee details with department hierarchy
+✅ Rave system with count display
+✅ JWT authentication
+✅ Role-based authorization
+✅ Docker setup
+✅ Database seeding
+✅ API documentation
+✅ Testing setup
